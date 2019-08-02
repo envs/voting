@@ -16,6 +16,7 @@ Install these prerequisites to follow along with the tutorial. See free video tu
 ## Step 1. Install dependencies
 
 $ cd voting
+
 $ npm install
 
 ## Step 2. Start Truffle
