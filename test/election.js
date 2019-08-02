@@ -17,12 +17,12 @@ contract("Election", function(accounts) {
       return electionInstance.candidates(1);
     }).then(function(candidate) {
       assert.equal(candidate[0], 1, "contains the correct id");
-      assert.equal(candidate[1], "Candidate 1", "contains the correct name");
+      assert.equal(candidate[1], "Candidate A", "contains the correct name");
       assert.equal(candidate[2], 0, "contains the correct votes count");
       return electionInstance.candidates(2);
     }).then(function(candidate) {
       assert.equal(candidate[0], 2, "contains the correct id");
-      assert.equal(candidate[1], "Candidate 2", "contains the correct name");
+      assert.equal(candidate[1], "Candidate B", "contains the correct name");
       assert.equal(candidate[2], 0, "contains the correct votes count");
     });
   });
@@ -46,20 +46,20 @@ contract("Election", function(accounts) {
     })
   });
 
-  it("throws an exception for invalid candiates", function() {
+  it("throws an exception for invalid candidates", function() {
     return Election.deployed().then(function(instance) {
       electionInstance = instance;
-      return electionInstance.vote(99, { from: accounts[1] })
+      return electionInstance.vote(27, { from: accounts[1] })
     }).then(assert.fail).catch(function(error) {
       assert(error.message.indexOf('revert') >= 0, "error message must contain revert");
       return electionInstance.candidates(1);
     }).then(function(candidate1) {
       var voteCount = candidate1[2];
-      assert.equal(voteCount, 1, "candidate 1 did not receive any votes");
+      assert.equal(voteCount, 1, "candidate A did not receive any votes");
       return electionInstance.candidates(2);
     }).then(function(candidate2) {
       var voteCount = candidate2[2];
-      assert.equal(voteCount, 0, "candidate 2 did not receive any votes");
+      assert.equal(voteCount, 0, "candidate B did not receive any votes");
     });
   });
 
@@ -79,11 +79,11 @@ contract("Election", function(accounts) {
       return electionInstance.candidates(1);
     }).then(function(candidate1) {
       var voteCount = candidate1[2];
-      assert.equal(voteCount, 1, "candidate 1 did not receive any votes");
+      assert.equal(voteCount, 1, "candidate A did not receive any votes");
       return electionInstance.candidates(2);
     }).then(function(candidate2) {
       var voteCount = candidate2[2];
-      assert.equal(voteCount, 1, "candidate 2 did not receive any votes");
+      assert.equal(voteCount, 1, "candidate B did not receive any votes");
     });
   });
 });
