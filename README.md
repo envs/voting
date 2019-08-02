@@ -1,46 +1,35 @@
+# Election DApp
 
-# Election - DAPP Tutorial
-Build your first decentralized application, or Dapp, on the Ethereum Network with this tutorial!
-
-**Full Free Video Tutorial:**
-https://youtu.be/3681ZYbDSSk
+A Simple Voting Decentralized Application
 
 
-Follow the steps below to download, install, and run this project.
+Follow the steps outlined below to download, install, and run this project.
 
 ## Dependencies
 Install these prerequisites to follow along with the tutorial. See free video tutorial or a full explanation of each prerequisite.
-- NPM: https://nodejs.org
-- Truffle: https://github.com/trufflesuite/truffle
-- Ganache: http://truffleframework.com/ganache/
-- Metamask: https://metamask.io/
+- NPM
+- Truffle
+- Metamask
 
 
-## Step 1. Clone the project
-`git clone https://github.com/dappuniversity/election`
-
-## Step 2. Install dependencies
+## Step 1. Install dependencies
 ```
-$ cd election
+$ cd voting
 $ npm install
 ```
-## Step 3. Start Ganache
-Open the Ganache GUI client that you downloaded and installed. This will start your local blockchain instance. See free video tutorial for full explanation.
+## Step 2. Start Truffle
+
+To start your local Blockchain, we will use "truffle develop". 
+NB: You can use ganache-cli or ganache app as an alternative
 
 
-## Step 4. Compile & Deploy Election Smart Contract
+## Step 3. Compile & Deploy your Smart Contract
 `$ truffle migrate --reset`
-You must migrate the election smart contract each time your restart ganache.
+Migrate the smart contract everytime your restart 'truffle develop'
 
-## Step 5. Configure Metamask
-See free video tutorial for full explanation of these steps:
-- Unlock Metamask
-- Connect metamask to your local Etherum blockchain provided by Ganache.
-- Import an account provided by ganache.
+## Step 4. Configure Metamask
+You can check tutorials online to do this
 
-## Step 6. Run the Front End Application
+## Step 5. Run the Front End Application
 `$ npm run dev`
 Visit this URL in your browser: http://localhost:3000
-
-If you get stuck, please reference the free video tutorial.
-
